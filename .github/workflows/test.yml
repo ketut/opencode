@@ -4,7 +4,23 @@ on:
   push:
     branches:
       - dev
+    paths-ignore:           # Skip workflow jika hanya ubah docs
+      - '**.md'
+      - '**.txt'
+      - 'docs/**'
+      - 'LICENSE'
+      - 'CHANGELOG*'
+      - 'README.md'
+
   pull_request:
+    paths-ignore:           # Skip workflow jika hanya ubah docs
+      - '**.md'
+      - '**.txt'
+      - 'docs/**'
+      - 'LICENSE'
+      - 'CHANGELOG*'
+      - 'README.md'
+
   workflow_dispatch:
 
 concurrency:
